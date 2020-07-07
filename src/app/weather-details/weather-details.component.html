@@ -1,0 +1,15 @@
+<div id="weatherDetails">
+
+
+  <div class="weather-details" *ngIf="weatherData">
+    <div class="weather-details-row" *ngIf="weatherData.isDay"><i class="fas fa-7x fa fa-sun sun"></i></div>
+    <div class="weather-details-row" *ngIf="!weatherData.isDay"><i class="fas fa-7x fa fa-moon moon"></i></div>
+    <div class="weather-details-row cloudDiv"><i class="fas fa-7x fa fa-cloud cloud"></i></div>
+    <div class="weather-details-row" style="margin-top: 15px;font-size: 55px;">{{weatherData.temp}}°</div>
+    <div class="weather-details-row" style="font-size:20px;">Feels Like: {{weatherData.feelsLikeTemp}}°</div>
+    <div class="weather-details-row" style="font-size: 35px;margin-top:20px">{{weatherData.name}}</div>
+    <div class="weather-details-row" style="font-size: 20px;">Humiddity: {{weatherData.main.humidity}}%</div>
+
+  </div>
+  <input type="text" placeholder="Enter city name" [(ngModel)]="cityName" (change)='onChangeHandler()'>
+</div>
